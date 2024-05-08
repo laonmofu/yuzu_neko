@@ -536,7 +536,7 @@ export function genItem(seedOrRng?: (() => number) | string | number) {
 	item += items[Math.floor(rng() * items.length)];
 
 	if (Math.floor(rng() * 10) === 0) {
-		item += and[Math.floor(rng() * and.length)];
+		item += and[Math.floor(rng() * and.length)] + ' ';
 		if (Math.floor(rng() * 5) !== 0) {
 			 item += itemPrefixes[Math.floor(rng() * itemPrefixes.length)];
 			 item += ' ';
