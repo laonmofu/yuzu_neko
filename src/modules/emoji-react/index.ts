@@ -64,10 +64,11 @@ export default class extends Module {
 			return react(reaction);
 		}
 
-		if (includes(note.text, ['ぴざ'])) return react('🍕');
-		if (includes(note.text, ['ぷりん'])) return react('🍮');
-		if (includes(note.text, ['寿司', 'sushi']) || note.text === 'すし') return react('🍣');
+		if (includes(note.text, ['피자'])) return react('🍕');
+		if (includes(note.text, ['푸딩'])) return react('🍮');
+		if (includes(note.text, ['초밥', '회초밥']) || note.text === '스시') return react('🍣');
 
-		if (includes(note.text, ['藍'])) return react('🙌');
+		if (includes(note.text, ['아이'])) return react('🙌');
 	}
 }
+ 

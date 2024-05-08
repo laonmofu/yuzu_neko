@@ -57,13 +57,13 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		if (msg.includes(['迷路'])) {
+		if (msg.includes(['미로'])) {
 			let size: string | null = null;
-			if (msg.includes(['接待'])) size = 'veryEasy';
-			if (msg.includes(['簡単', 'かんたん', '易しい', 'やさしい', '小さい', 'ちいさい'])) size = 'easy';
-			if (msg.includes(['難しい', 'むずかしい', '複雑な', '大きい', 'おおきい'])) size = 'hard';
-			if (msg.includes(['死', '鬼', '地獄'])) size = 'veryHard';
-			if (msg.includes(['藍']) && msg.includes(['本気'])) size = 'ai';
+			if (msg.includes(['쉽게', '순한맛'])) size = 'veryEasy';
+			if (msg.includes(['간단하게', '간단', '간단히', '간단하다', '간단한'])) size = 'easy';
+			if (msg.includes(['어렵게', '매운맛', '맵게', '어렵다', '어려운'])) size = 'hard';
+			if (msg.includes(['죽음', '오니', '지옥', '고인물'])) size = 'veryHard';
+			if (msg.includes(['아이']) && msg.includes(['진심'])) size = 'ai';
 			this.log('Maze requested');
 			setTimeout(async () => {
 				const file = await this.genMazeFile(Date.now(), size);

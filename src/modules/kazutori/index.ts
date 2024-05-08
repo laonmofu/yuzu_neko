@@ -42,7 +42,7 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		if (!msg.includes(['数取り'])) return false;
+		if (!msg.includes(['숫자 게임'])) return false;
 
 		const games = this.games.find({});
 

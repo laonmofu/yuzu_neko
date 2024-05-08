@@ -58,7 +58,7 @@ export default class extends Module {
 		const emojiSize = emojisData.length;
 		this.lastEmoji.remove(lastEmoji);
 
-		const server_name = config.serverName ? config.serverName : 'このサーバー';
+		const server_name = config.serverName ? config.serverName : '이 서버';
 		this.log('Posting...');
 
 		// 一気に投稿しないver
@@ -142,7 +142,7 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		if (!msg.includes(['カスタムえもじチェック','カスタムえもじを調べて','カスタムえもじを確認'])) {
+		if (!msg.includes(['커스텀 이모지','커스텀 이모지 확인','커모지 확인'])) {
 			return false;
 		} else {
 			this.log('Check CustomEmojis requested');

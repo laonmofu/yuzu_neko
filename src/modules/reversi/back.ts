@@ -17,10 +17,10 @@ function getUserName(user) {
 }
 
 const titles = [
-	'さん', 'サン', 'ｻﾝ', '㌠',
-	'ちゃん', 'チャン', 'ﾁｬﾝ',
-	'君', 'くん', 'クン', 'ｸﾝ',
-	'先生', 'せんせい', 'センセイ', 'ｾﾝｾｲ'
+	'씨', '님',
+	'쨩',
+	'군',
+	'선생', '선생님',
 ];
 
 class Session {
@@ -64,7 +64,7 @@ class Session {
 	private get userName(): string {
 		let name = getUserName(this.user);
 		if (name.includes('$') || name.includes('<') || name.includes('*')) name = this.user.username;
-		return `?[${name}](${config.host}/@${this.user.username})${titles.some(x => name.endsWith(x)) ? '' : 'さん'}`;
+		return `?[${name}](${config.host}/@${this.user.username})${titles.some(x => name.endsWith(x)) ? '' : '님'}`;
 	}
 
 	private get strength(): number {

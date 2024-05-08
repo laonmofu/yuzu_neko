@@ -8,6 +8,7 @@ const ReconnectingWebsocket = _ReconnectingWebsocket as unknown as typeof _Recon
 
 /**
  * Misskey stream connection
+ * 추가로 번역할 사항 없을 듯?
  */
 export default class Stream extends EventEmitter {
 	private stream: any;

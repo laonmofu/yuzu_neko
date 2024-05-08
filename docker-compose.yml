@@ -4,7 +4,7 @@ services:
     build:
       context: .
       args:
-        - enable_mecab=1
+        - enable_mecab=0
     platform: linux/amd64
     volumes:
       - './config.json:/ai/config.json:ro'

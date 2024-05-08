@@ -30,7 +30,7 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		if (!msg.includes(['数当て', '数あて'])) return false;
+		if (!msg.includes(['숫자 맞추기', '숫자 맞히기'])) return false;
 
 		const exist = this.guesses.findOne({
 			userId: msg.userId,
@@ -70,7 +70,7 @@ export default class extends Module {
 			return;
 		}
 
-		if (msg.text.includes('やめ')) {
+		if (msg.text.includes('중지')) {
 			msg.reply(serifs.guessingGame.cancel);
 			exist.isEnded = true;
 			exist.endedAt = Date.now();

@@ -14,8 +14,8 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		if (msg.text && msg.text.includes('ping')) {
-			msg.reply('PONG!', {
+		if (msg.text && msg.text.includes('핑')) {
+			msg.reply('냥!', {
 				immediate: true
 			});
 			return true;

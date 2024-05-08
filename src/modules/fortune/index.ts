@@ -6,35 +6,35 @@ import seedrandom from 'seedrandom';
 import { genItem } from '@/vocabulary.js';
 
 export const blessing = [
-	'藍吉',
-	'ヨタ吉',
-	'ゼタ吉',
-	'エクサ吉',
-	'ペタ吉',
-	'テラ吉',
-	'ギガ吉',
-	'メガ吉',
-	'キロ吉',
-	'ヘクト吉',
-	'デカ吉',
-	'デシ吉',
-	'センチ吉',
-	'ミリ吉',
-	'マイクロ吉',
-	'ナノ吉',
-	'ピコ吉',
-	'フェムト吉',
-	'アト吉',
-	'ゼプト吉',
-	'ヨクト吉',
-	'超吉',
-	'大大吉',
-	'大吉',
-	'吉',
-	'中吉',
-	'小吉',
-	'凶',
-	'大凶',
+	'아이길',
+	'슈퍼울트라익스트림길',
+	'익스트림길',
+	'울트라길',
+	'슈퍼길',
+	'얼티메이트길',
+	'기가길',
+	'메가길',
+	'킬로길',
+	'헥토파스칼길',
+	'데카길',
+	'데시길',
+	'센티길',
+	'밀리길',
+	'마이크로길',
+	'나노길',
+	'피코길',
+	'펨토길',
+	'아톰길',
+	'젭토키치',
+	'역도길',
+	'초길',
+	'대대길',
+	'대길',
+	'길',
+	'중길',
+	'소길',
+	'흉',
+	'대흉',
 ];
 
 export default class extends Module {
@@ -49,13 +49,13 @@ export default class extends Module {
 
 	@bindThis
 	private async mentionHook(msg: Message) {
-		if (msg.includes(['占', 'うらな', '運勢', 'おみくじ'])) {
+		if (msg.includes(['점', '운세', '점괘', '오미쿠지'])) {
 			const date = new Date();
 			const seed = `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}@${msg.userId}`;
 			const rng = seedrandom(seed);
 			const omikuji = blessing[Math.floor(rng() * blessing.length)];
 			const item = genItem(rng);
-			msg.reply(`**${omikuji}🎉**\nラッキーアイテム: ${item}`, {
+			msg.reply(`**${omikuji}🎉**\n행운의 아이템: ${item}`, {
 				cw: serifs.fortune.cw(msg.friend.name)
 			});
 			return true;
@@ -64,3 +64,4 @@ export default class extends Module {
 		}
 	}
 }
+ 
